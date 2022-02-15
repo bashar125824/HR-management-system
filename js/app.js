@@ -32,16 +32,16 @@ form.addEventListener("submit", handler)
 
 
 
-Employee.prototype.render = function () {
+//Employee.prototype.render = function () {
 
-    document.writeln(`<p>${this.name}  :  ${this.Salary(this.level)}</p>`);
+  //  document.writeln(`<p>${this.name}  :  ${this.Salary(this.level)}</p>`);
 
-}
-
-
+//}
 
 
-for (let i = 0; i < arr.length; i++) {
-    arr[i].render();
-}
+
+
+//for (let i = 0; i < arr.length; i++) {
+//    arr[i].render();
+//}
 
