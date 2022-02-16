@@ -29,6 +29,11 @@ function handler(event) {
 
 form.addEventListener("submit", handler)
 
+function handler(event){
+    event.preventDefault();
+    console.log(event);
+}
+
 
 
 
