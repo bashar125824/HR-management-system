@@ -29,17 +29,12 @@ function handler(event) {
 
 form.addEventListener("submit", handler)
 
-function handler(event){
-    event.preventDefault();
-    console.log(event);
-}
-
 
 
 
 //Employee.prototype.render = function () {
 
-  //  document.writeln(`<p>${this.name}  :  ${this.Salary(this.level)}</p>`);
+//    document.writeln(`<p>${this.name}  :  ${this.Salary(this.level)}</p>`);
 
 //}
 
@@ -47,6 +42,6 @@ function handler(event){
 
 
 //for (let i = 0; i < arr.length; i++) {
-//    arr[i].render();
+ //   arr[i].render();
 //}
 
