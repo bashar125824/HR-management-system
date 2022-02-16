@@ -3,11 +3,12 @@
 
 var arr = [];
 
-function Employee(ID , FullName , Department , Level ){
+function Employee(ID , FullName , Department , Level , salary){
     this.ID = ID;
     this.FullName = FullName;
     this.Department = Department;
     this.Level = Level;
+    this.salary = this.Salary();
     arr.push(this)
 }
 
