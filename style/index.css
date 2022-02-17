@@ -33,3 +33,29 @@ a {
   text-decoration: none;
 }
 
+
+ .Show img {
+  background-color: gray;
+}
+
+.Show {
+background-color: coral;
+color: greenyellow;
+text-align: center;
+align-items: center;
+width: 30%;
+height: fit-content;
+margin: auto;
+display: flex;
+flex-direction: column;
+border-radius: 30%;
+font-size: small;
+margin-top: 9%;
+margin-bottom: 9%; 
+}
+
+
+
+.container {
+  padding: 2px 16px ;
+}
