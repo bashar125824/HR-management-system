@@ -1,5 +1,6 @@
 'use strict';
 
+
 let employeeArr = [];
 
 function Employee(name, department, level, image , salary) {
@@ -22,6 +23,7 @@ function digitGeneratr() {
 
 Employee.prototype.getId = function(){
     this.emplyeeId = digitGeneratr();
+
 }
 
 
@@ -136,3 +138,5 @@ for (let i = 0; i < employeeArr.length; i++) {
 
 renderAll();
 
+}
+}
