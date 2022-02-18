@@ -1,18 +1,30 @@
-
 'use strict';
 
 
-var arr = [];
+let employeeArr = [];
 
-function Employee(ID , FullName , Department , Level , salary){
-    this.ID = ID;
-    this.FullName = FullName;
-    this.Department = Department;
-    this.Level = Level;
-    this.salary = this.Salary();
-    arr.push(this)
+function Employee(name, department, level, image , salary) {
+    this.emplyeeId = 0;
+    this.name = name;
+    this.department = department;
+    this.level = level;
+    this.image = image;
+    this.salary = 0;
+    employeeArr.push(this); 
 }
 
+
+
+let startEmployeeid = 1000;
+
+function digitGeneratr() {
+    return startEmployeeid++;
+}
+
+Employee.prototype.getId = function(){
+    this.emplyeeId = digitGeneratr();
+
+}
 
 
 
@@ -64,35 +76,6 @@ Employee.prototype.getSalary = function () {
     this.salary = netSalary;
 
  
-Employee.prototype.Salary = function (Level){
-   
-    var salary;
-    var tax;
-    var netSalary;
-if(this.Level == "Senior")
-{   
-     salary = (Math.floor(Math.random() * (2000 - 1500)) + 1500) ;
-    tax = salary * 0.075;
-    netSalary = salary - tax;
-    }
-
-else if (this.Level == "Mid-Senior"){
-    salary = (Math.floor(Math.random() * (1500 - 1000)) + 1000);
-    tax = salary * 0.075;
-    netSalary = salary - tax;
-    }
-
-else if (this.Level == "Junior") {
-    salary = (Math.floor(Math.random() * (1000 - 500)) + 500);
-    tax = salary * 0.075;
-    netSalary = salary - tax;
-    }
-    return netSalary;
-
-
-}
-
-
 
 let Ghazi = new Employee("Ghazi Samer", "Administration", "Senior", 'assets/Ghazi Samer.png');
 Ghazi.getId();
@@ -144,17 +127,6 @@ let divShow = document.createElement("div");
 
 
 
-
-Employee.prototype.render = function(){
-
-        document.writeln(`<p>${this.FullName}  :  ${this.Salary(this.Level)}</p>`);
-
-
-}
-
-
-
-
 function renderAll(){
 for (let i = 0; i < employeeArr.length; i++) {
     employeeArr[i].getId();
@@ -166,9 +138,5 @@ for (let i = 0; i < employeeArr.length; i++) {
 
 renderAll();
 
-
-
-
 }
 }
-
