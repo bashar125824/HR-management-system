@@ -137,6 +137,5 @@ for (let i = 0; i < employeeArr.length; i++) {
 }
 
 renderAll();
+}}
 
-}
-}
