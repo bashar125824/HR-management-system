@@ -2,14 +2,15 @@
 
 let employeeArr = [];
 
-function Employee(name, department, level, image , salary) {
+function Employee(name, department, level, image, salary) {
     this.emplyeeId = 0;
     this.name = name;
     this.department = department;
     this.level = level;
     this.image = image;
     this.salary = 0;
-    employeeArr.push(this); 
+
+    employeeArr.push(this);
 }
 
 
@@ -20,7 +21,7 @@ function digitGeneratr() {
     return startEmployeeid++;
 }
 
-Employee.prototype.getId = function(){
+Employee.prototype.getId = function () {
     this.emplyeeId = digitGeneratr();
 }
 
@@ -49,8 +50,8 @@ function handler(event) {
 }
 
 Employee.prototype.getSalary = function () {
-     
-    
+
+
     var theSalary;
     var tax;
     var netSalary;
@@ -73,7 +74,7 @@ Employee.prototype.getSalary = function () {
     }
     this.salary = netSalary;
 
- 
+}
 
 let Ghazi = new Employee("Ghazi Samer", "Administration", "Senior", 'assets/Ghazi Samer.png');
 Ghazi.getId();
@@ -93,11 +94,11 @@ Hadi.getId();
 
 Employee.prototype.render = function () {
 
-let divShow = document.createElement("div");
+    let divShow = document.createElement("div");
     divShow.setAttribute('class', "Show");
 
     let imgShow = document.createElement("img");
-    imgShow.setAttribute("src" , this.image);
+    imgShow.setAttribute("src", this.image);
     divShow.appendChild(imgShow);
 
     let thetitle = document.createElement("h3");
@@ -105,15 +106,15 @@ let divShow = document.createElement("div");
     divShow.appendChild(thetitle);
 
     let titleId = document.createElement("h3");
-    titleId.textContent="Id :"+this.emplyeeId;
+    titleId.textContent = "Id :" + this.emplyeeId;
     divShow.appendChild(titleId);
 
     let titleDep = document.createElement("h3");
-    titleDep.textContent="Department :" +this.department;
+    titleDep.textContent = "Department :" + this.department;
     divShow.appendChild(titleDep);
 
     let titleLevel = document.createElement("h3");
-    titleLevel.textContent="Level :" +this.level;
+    titleLevel.textContent = "Level :" + this.level;
     divShow.appendChild(titleLevel);
 
     let salary = document.createElement("h3");
@@ -123,15 +124,20 @@ let divShow = document.createElement("div");
 
     employeeDiv.appendChild(divShow);
 
-
-
-function renderAll(){
-for (let i = 0; i < employeeArr.length; i++) {
-    employeeArr[i].getId();
-    employeeArr[i].getSalary();
-    employeeArr[i].render();
-
 }
+
+function renderAll() {
+    for (let i = 0; i < employeeArr.length; i++) {
+        employeeArr[i].getId();
+        employeeArr[i].getSalary();
+        employeeArr[i].render();
+
+    }
 }
+
 
 renderAll();
+
+
+
+
