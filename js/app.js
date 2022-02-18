@@ -1,27 +1,4 @@
 
-let employeeArr = [];
-
-function Employee(name, department, level, image , salary) {
-    this.emplyeeId = 0;
-    this.name = name;
-    this.department = department;
-    this.level = level;
-    this.image = image;
-    this.salary = 0;
-    employeeArr.push(this); 
-}
-
-
-
-let startEmployeeid = 1000;
-
-function digitGeneratr() {
-    return startEmployeeid++;
-}
-
-Employee.prototype.getId = function(){
-    this.emplyeeId = digitGeneratr();
-=======
 'use strict';
 
 
@@ -189,15 +166,9 @@ for (let i = 0; i < employeeArr.length; i++) {
 
 renderAll();
 
-let Ghazi = new Employee(1000, "Ghazi Samer", "Administration", "Senior");
-let Lana = new Employee(1001, "Lana Ali", "Finance", "Senior");
-let Tamara = new Employee(1002, "Tamara Ayoub", "Marketing", "Senior");
-let Safi = new Employee(1003, "Safi Walid", "Administration", "Mid-Senior");
-let Omar = new Employee(1004, "Omar Zaid", "Development", "Senior");
-let Rana = new Employee(1005, "Rana Saleh", "Development", "Junior");
-let Hadi = new Employee(1006, "Hadi Ahmad", "Finance", "Mid-Senior");
 
-for (let i = 0; i < arr.length; i++) {
-   arr[i].render();
+
+
+}
 }
 
