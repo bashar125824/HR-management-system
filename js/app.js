@@ -9,7 +9,6 @@ function Employee(name, department, level, image, salary) {
     this.level = level;
     this.image = image;
     this.salary = 0;
-
     employeeArr.push(this);
 }
 
@@ -45,8 +44,9 @@ function handler(event) {
     newEmployee.getId();
     newEmployee.getSalary();
     newEmployee.render();
+    saveEmployees();
     console.log(employeeArr);
-    form.reset();
+   
 }
 
 Employee.prototype.getSalary = function () {
@@ -91,6 +91,36 @@ Rana.getId();
 let Hadi = new Employee("Hadi Ahmad", "Finance", "Mid-Senior", 'assets/Hadi Ahmad.jpg');
 Hadi.getId();
 
+function saveEmployees(){
+
+    let formatedData = JSON.stringify(employeeArr);
+    localStorage.setItem("Employees", formatedData);
+
+
+}
+
+function gitData(){
+    let newEmployee = localStorage.getItem("Employees");
+    let parseEmployees = JSON.parse(newEmployee);
+
+
+     employeeArr = [];
+    if (parseEmployees != null){
+    for (let i = 0; i < parseEmployees.length; i++){
+    new Employee(
+        parseEmployees[i].name,
+        parseEmployees[i].department,
+        parseEmployees[i].level,
+        parseEmployees[i].image
+    );
+     
+    }
+}
+    renderAll();
+}
+
+
+
 
 Employee.prototype.render = function () {
 
@@ -127,16 +157,19 @@ Employee.prototype.render = function () {
 }
 
 function renderAll() {
+    employeeDiv.innerHTML = " ";
+
     for (let i = 0; i < employeeArr.length; i++) {
         employeeArr[i].getId();
         employeeArr[i].getSalary();
         employeeArr[i].render();
 
+
     }
-}
+};
 
+gitData();
 
-renderAll();
 
 
 
